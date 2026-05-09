@@ -25,14 +25,14 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
 
-knn_ss = make_pipeline(
+model_ss = make_pipeline(
     StandardScaler(),
-    KNeighborsClassifier(n_neighbors=5)
+    SVC()
 )
 
-knn_ss.fit(X_train, y_train)
-acc = knn_ss.score(X_test, y_test)
+model_ss.fit(X_train, y_train)
+acc = model_ss.score(X_test, y_test)
 
 print("Accuracy:", acc)

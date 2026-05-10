@@ -25,11 +25,11 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
-from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
 
 model_ss = make_pipeline(
     StandardScaler(),
-    LogisticRegression(max_iter=1000)
+    SVC()
 )
 
 model_ss.fit(X_train, y_train)
